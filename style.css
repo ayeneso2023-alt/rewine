@@ -101,6 +101,41 @@ body {
   color: var(--accent-gold);
 }
 
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 3px 6px;
+  border-radius: 20px;
+  border: 1px solid var(--border-light);
+  flex-wrap: wrap;
+}
+
+.lang-switcher a {
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 6px;
+  border-radius: 12px;
+  color: var(--text-muted);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.lang-switcher a:hover {
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.lang-switcher a.active {
+  color: #FFFFFF;
+  background: var(--primary);
+  border: 1px solid var(--accent-gold);
+}
+
 .btn-cta {
   display: inline-flex;
   align-items: center;
