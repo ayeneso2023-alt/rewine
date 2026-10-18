@@ -1114,6 +1114,179 @@ def main():
     base_dir = os.path.dirname(os.path.abspath(__file__))
     generated_count = 0
 
+    # Inject PRO Lifetime & Free Trial data across all languages
+    pro_cards = {
+        "es": ("💎", "Prueba Gratuita & ReWine PRO Vitalicio", "Disfruta de hasta <strong>5 catas completas y 1 exportación editorial en PDF</strong> gratis. Desbloquea <strong>ReWine PRO</strong> mediante un pago único de 9,99 € para toda la vida: catas ilimitadas, exportaciones PDF infinitas y progresión sommelier completa. Sin suscripciones ni anuncios."),
+        "en": ("💎", "Free Trial & ReWine PRO Lifetime", "Enjoy up to <strong>5 complete tastings and 1 editorial A4 PDF export</strong> for free. Unlock <strong>ReWine PRO</strong> with a one-time purchase of €9.99 for lifetime access: unlimited tastings, endless PDF exports, and complete sommelier progression. Zero subscriptions, zero ads."),
+        "fr": ("💎", "Essai Gratuit & ReWine PRO À Vie", "Profitez de <strong>5 dégustations complètes et 1 export PDF éditorial</strong> gratuits. Débloquez <strong>ReWine PRO</strong> en un paiement unique de 9,99 € à vie : dégustations illimitées, exports PDF infinis et progression sommelier intégrale. Sans abonnement ni publicité."),
+        "it": ("💎", "Prova Gratuita & ReWine PRO A Vita", "Prova fino a <strong>5 degustazioni complete e 1 esportazione PDF editoriale</strong> gratis. Sblocca <strong>ReWine PRO</strong> con un unico pagamento di 9,99 € a vita: degustazioni illimitate, esportazioni PDF infinite e progressione sommelier completa. Nessun abbonamento né annunci."),
+        "pt": ("💎", "Avaliação Gratuita & ReWine PRO Vitalício", "Desfrute de até <strong>5 provas completas e 1 exportação editorial em PDF</strong> gratuitas. Desbloqueie o <strong>ReWine PRO</strong> com um pagamento único de 9,99 € vitalício: provas ilimitadas, exportações PDF infinitas e progressão sommelier completa. Sem subscrições nem anúncios."),
+        "ru": ("💎", "Бесплатная Пробная Версия & ReWine PRO Навсегда", "Создайте до <strong>5 полных дегустаций и 1 полиграфический PDF-экспорт</strong> бесплатно. Разблокируйте <strong>ReWine PRO</strong> разовым платежом 9,99 € навсегда: безлимитные дегустации, неограниченный экспорт в PDF и полный ранг сомелье. Без подписок и рекламы."),
+        "zh": ("💎", "免费体验与 ReWine PRO 终身版", "免费尊享最多 <strong>5次完整品酒记录及1份高端PDF报告导出</strong>。仅需一次性支付 9.99 欧元即可永久解锁 <strong>ReWine PRO 终身版</strong>：无限品酒建档、无限PDF导出及侍酒师完整段位体系。零按期订阅，零广告干扰。")
+    }
+
+    pro_faqs = {
+        "es": [
+            ("¿Es ReWine gratuita o tiene versión de prueba?",
+             "ReWine se descarga de forma gratuita e incluye una prueba completa con todas las herramientas profesionales activas: puedes registrar hasta <strong>5 catas completas</strong> y realizar <strong>1 exportación editorial en PDF</strong> de manera gratuita. Además, siempre podrás consultar, buscar y editar tus catas guardadas sin ningún coste."),
+            ("¿Qué incluye ReWine PRO y cuánto cuesta?",
+             "ReWine PRO elimina todos los límites y te otorga: <strong>catas ilimitadas</strong>, <strong>exportaciones de fichas PDF ilimitadas</strong> y la <strong>progresión completa en los 5 niveles del Sommelier</strong>. Se adquiere mediante un <strong>pago único de 9,99 € para toda la vida (Lifetime)</strong>. Sin cuotas mensuales ni anuales, sin renovaciones automáticas y sin publicidad."),
+            ("¿Cómo funciona la restauración de compras si cambio de iPhone o iPad?",
+             "Tu compra de ReWine PRO está directamente asociada a tu cuenta de Apple ID. Si cambias de dispositivo, tienes varios equipos o reinstalas la aplicación, simplemente pulsa el botón «Restaurar compras» en la pantalla de desbloqueo o en los ajustes y recuperarás tu acceso PRO de inmediato sin pagar de nuevo."),
+            ("¿Se borran o bloquean mis catas si decido no adquirir ReWine PRO?",
+             "No, en absoluto. Tus datos son siempre tuyos. Las catas que hayas registrado durante la prueba permanecen 100% accesibles en tu dispositivo: podrás visualizarlas, modificarlas, agregar fotos y revisarlas siempre que lo desees sin estar obligado a pagar.")
+        ],
+        "en": [
+            ("Is ReWine free or does it include a trial?",
+             "ReWine is free to download and includes a full-featured trial: you can create up to <strong>5 complete wine tastings</strong> and generate <strong>1 editorial A4 PDF export</strong> completely free of charge. You can always browse, search, and edit your saved tastings at no cost."),
+            ("What does ReWine PRO include and how much does it cost?",
+             "ReWine PRO unlocks <strong>unlimited wine tastings</strong>, <strong>unlimited A4 PDF exports</strong>, and full access to the <strong>5-tier Sommelier progression system</strong>. It is available as a single <strong>one-time payment of €9.99 for lifetime access</strong>. No monthly or yearly subscriptions, no recurring charges, and no ads."),
+            ("How do I restore my purchase if I switch devices or reinstall?",
+             "Your ReWine PRO purchase is linked to your personal Apple ID. If you change devices or reinstall the app, simply tap «Restore Purchases» on the paywall sheet to restore your PRO status instantly without paying again."),
+            ("Will my tastings be locked or lost if I don't purchase PRO?",
+             "Never. Your tasting data always belongs to you. All tastings recorded during your free trial remain fully accessible on your device: you can view, edit, add photos, and review them anytime without any requirement to purchase.")
+        ],
+        "fr": [
+            ("ReWine est-elle gratuite ou propose-t-elle un essai ?",
+             "ReWine est téléchargeable gratuitement et comprend un essai complet de toutes les fonctionnalités : vous pouvez enregistrer jusqu'à <strong>5 dégustations complètes</strong> et effectuer <strong>1 export de fiche PDF</strong> sans aucun frais. Vous pouvez toujours consulter et modifier vos dégustations enregistrées gratuitement."),
+            ("Que comprend ReWine PRO et quel est son prix ?",
+             "ReWine PRO débloque des <strong>dégustations illimitées</strong>, des <strong>exports PDF illimités</strong> et l'accès complet à la <strong>progression des 5 niveaux de Sommelier</strong>. Il s'agit d'un <strong>paiement unique de 9,99 € à vie</strong>. Sans abonnement, sans frais récurrents et sans publicité."),
+            ("Comment restaurer mon achat en cas de changement d'appareil ?",
+             "Votre achat ReWine PRO est lié à votre identifiant Apple ID. En cas de changement d'iPhone/iPad ou de réinstallation, appuyez simplement sur «Restaurer les achats» pour réactiver votre accès PRO instantanément sans repayer."),
+            ("Mes dégustations sont-elles bloquées si je n'achète pas la version PRO ?",
+             "Absolument pas. Toutes les dégustations créées pendant l'essai restent accessibles sur votre appareil. Vous pouvez les consulter, les modifier et filtrer vos notes à tout moment en toute liberté.")
+        ],
+        "it": [
+            ("ReWine è gratuita o prevede un periodo di prova?",
+             "ReWine si scarica gratuitamente e include una prova completa: puoi registrare fino a <strong>5 degustazioni complete</strong> e generare <strong>1 esportazione PDF editoriale</strong> gratuitamente. Puoi sempre consultare e modificare le tue schede salvate senza alcun costo."),
+            ("Cosa include ReWine PRO e quanto costa?",
+             "ReWine PRO sblocca <strong>degustazioni illimitate</strong>, <strong>esportazioni PDF illimitate</strong> e la <strong>progressione completa nei 5 livelli Sommelier</strong>. È acquistabile con un <strong>pagamento unico di 9,99 € a vita</strong>. Nessun abbonamento mensile o annuale, nessun addebito ricorrente e zero pubblicità."),
+            ("Come ripristino il mio acquisto se cambio dispositivo o reinstallo l'app?",
+             "Il tuo acquisto di ReWine PRO è legato al tuo Apple ID. Se cambi iPhone o iPad, basta premere il pulsante «Ripristina acquisti» per riattivare immediatamente il tuo accesso PRO senza costi aggiuntivi."),
+            ("Le mie degustazioni vengono cancellate o bloccate se non acquisto la versione PRO?",
+             "No, in nessun caso. I tuoi dati restano sempre tuoi. Tutte le degustazioni salvate durante la prova rimangono disponibili sul dispositivo per essere visualizzate e modificate liberamente.")
+        ],
+        "pt": [
+            ("O ReWine é gratuito ou possui versão de avaliação?",
+             "O ReWine pode ser descarregado gratuitamente e inclui uma avaliação completa: pode registar até <strong>5 provas completas</strong> e efetuar <strong>1 exportação editorial em PDF</strong> sem qualquer custo. Pode sempre consultar e editar as suas provas guardadas gratuitamente."),
+            ("O que inclui o ReWine PRO e qual o seu preço?",
+             "O ReWine PRO desbloqueia <strong>provas ilimitadas</strong>, <strong>exportações PDF ilimitadas</strong> e a <strong>progressão completa nos 5 níveis de Sommelier</strong>. Trata-se de um <strong>pagamento único de 9,99 € vitalício</strong>. Sem subscrições mensais ou anuais, sem cobranças recorrentes e sem anúncios."),
+            ("Como posso restaurar a minha compra se mudar de dispositivo?",
+             "A sua compra do ReWine PRO está associada ao seu Apple ID. Se trocar de iPhone ou iPad, basta tocar em «Restaurar compras» para recuperar o seu acesso PRO instantaneamente sem pagar novamente."),
+            ("As minhas provas ficam bloqueadas se não adquirir a versão PRO?",
+             "De modo algum. As provas registadas durante o período de avaliação permanecem totalmente acessíveis no seu dispositivo para consulta e edição livre.")
+        ],
+        "ru": [
+            ("Приложение ReWine бесплатное или имеет пробную версию?",
+             "ReWine можно скачать бесплатно, и оно включает полный пробный доступ: вы можете создать до <strong>5 полных дегустаций</strong> и выполнить <strong>1 полиграфический экспорт в PDF</strong> бесплатно. Вы всегда можете просматривать и редактировать сохраненные дегустации без ограничений."),
+            ("Что входит в ReWine PRO и сколько это стоит?",
+             "ReWine PRO снимает все лимиты: <strong>неограниченное количество дегустаций</strong>, <strong>безлимитный экспорт в PDF</strong> и полный доступ к <strong>5 уровням ранга Сомелье</strong>. Это <strong>единоразовый платеж 9,99 € навсегда (Lifetime)</strong>. Никаких подписок, никаких скрытых платежей и никакой рекламы."),
+            ("Как восстановить покупку при смене устройства или переустановке?",
+             "Ваша покупка ReWine PRO привязана к вашей учетной записи Apple ID. При смене iPhone или iPad просто нажмите кнопку «Восстановить покупки», чтобы мгновенно вернуть PRO-доступ без повторной оплаты."),
+            ("Будут ли заблокированы мои дегустации, если я не куплю PRO?",
+             "Нет, ни в коем случае. Ваши данные всегда остаются с вами. Все дегустации, созданные во время пробного периода, остаются доступными для просмотра и редактирования на вашем устройстве.")
+        ],
+        "zh": [
+            ("ReWine 是免费的吗？是否提供免费试用？",
+             "ReWine 可免费下载并包含全功能试用体验：您可以免费记录最多 <strong>5次完整的葡萄酒品鉴档案</strong>，并享受 <strong>1次高保真A4 PDF报告导出</strong>。您保存在设备中的品酒记录可永久免费查阅与编辑。"),
+            ("ReWine PRO 终身版包含哪些特权？售价是多少？",
+             "ReWine PRO 解锁 <strong>无限品酒建档</strong>、<strong>无限次PDF专业排版导出</strong> 以及 <strong>五级侍酒师完整互动进阶体系</strong>。仅需 <strong>一次性支付 9.99 欧元即可获得终身访问权</strong>。绝无按月或按年订阅扣费，无自动续费陷阱，纯净无广告。"),
+            ("更换设备或重新安装应用后如何恢复购买？",
+             "您的 ReWine PRO 购买记录直接绑定至您的 Apple ID 账户。更换新 iPhone/iPad 或重装应用后，只需在购买面板点击「恢复购买」即可立即恢复 PRO 专属权益，无需重复付费。"),
+            ("如果未升级至 PRO 版本，已保存的品酒记录会被锁定或丢失吗？",
+             "绝不会。您的数据完全属于您自己。试用期间记录的所有品鉴档案均完好保存在您的设备本地，您可以随时随地查看、编辑、更新照片或筛选检索，绝无强制付费限制。")
+        ]
+    }
+
+    pro_privacy = {
+        "es": (
+            "7. Compras dentro de la App (In-App Purchases) y Pagos Seguros con Apple",
+            "<p>ReWine ofrece la posibilidad de adquirir <strong>ReWine PRO</strong> mediante compra integrada no consumible (pago único vitalicio). Todas las transacciones económicas y pagos son gestionados y procesados de manera directa, encriptada y exclusiva por Apple a través de la API oficial <strong>StoreKit 2</strong>.</p>"
+            "<ul>"
+            "<li><strong>Cero Acceso a Datos Financieros:</strong> ReWine nunca recopila, almacena ni tiene acceso a tus números de tarjeta de crédito, cuentas bancarias ni credenciales de pago.</li>"
+            "<li><strong>Validación Criptográfica Local:</strong> El estado de compra y la licencia de acceso vitalicio se verifican de forma criptográfica directamente en tu dispositivo mediante recibos firmados por Apple (JWS).</li>"
+            "<li><strong>Sin Intermediarios ni Rastreo Comercial:</strong> No empleamos pasarelas de pago de terceros ni compartimos información de tus compras con anunciantes o redes publicitarias.</li>"
+            "</ul>"
+        ),
+        "en": (
+            "7. In-App Purchases and Secure Payments via Apple",
+            "<p>ReWine offers an optional <strong>ReWine PRO</strong> lifetime unlock via non-consumable In-App Purchase. All financial transactions and payments are handled directly, securely, and exclusively by Apple using the native <strong>StoreKit 2</strong> framework.</p>"
+            "<ul>"
+            "<li><strong>Zero Access to Financial Information:</strong> ReWine never collects, stores, or accesses credit card numbers, bank accounts, or billing details.</li>"
+            "<li><strong>On-Device Cryptographic Verification:</strong> Your lifetime purchase entitlement is cryptographically validated on-device using Apple-signed JWS receipts.</li>"
+            "<li><strong>No Third-Party Intermediaries:</strong> We do not use third-party payment gateways or share purchase telemetry with advertising networks.</li>"
+            "</ul>"
+        ),
+        "fr": (
+            "7. Achats Intégrés (In-App Purchases) et Paiements Sécurisés Apple",
+            "<p>ReWine propose le déblocage <strong>ReWine PRO</strong> via un achat intégré non consommable (paiement unique à vie). Toutes les transactions financières sont traitées de manière sécurisée et exclusive par Apple via l'API officielle <strong>StoreKit 2</strong>.</p>"
+            "<ul>"
+            "<li><strong>Zéro Accès aux Données Financières :</strong> ReWine ne collecte, ne conserve et n'a jamais accès à vos coordonnées bancaires ou numéros de carte.</li>"
+            "<li><strong>Vérification Cryptographique Locale :</strong> Vos droits d'achat à vie sont validés directement sur votre appareil à l'aide de reçus cryptographiques Apple (JWS).</li>"
+            "<li><strong>Aucun Intermédiaire Tiers :</strong> Aucun système de paiement externe n'est utilisé et aucune donnée de paiement n'est partagée avec des régies publicitaires.</li>"
+            "</ul>"
+        ),
+        "it": (
+            "7. Acquisti In-App e Pagamenti Sicuri con Apple",
+            "<p>ReWine consente di sbloccare <strong>ReWine PRO</strong> tramite acquisto in-app non consumabile (pagamento unico a vita). Tutte le transazioni economiche sono gestite in modo sicuro ed esclusivo da Apple tramite la tecnologia <strong>StoreKit 2</strong>.</p>"
+            "<ul>"
+            "<li><strong>Zero Accesso ai Dati Finanziari:</strong> ReWine non raccoglie, non archivia e non ha accesso ai dati della carta di credito o del conto bancario.</li>"
+            "<li><strong>Verifica Crittografica sul Dispositivo:</strong> Il diritto di acquisto a vita viene verificato in locale sul dispositivo tramite ricevute firmate digitalmente da Apple (JWS).</li>"
+            "<li><strong>Nessun Intermediario Esterno:</strong> Non utilizziamo gateway di pagamento di terze parti né condividiamo dati di acquisto con reti pubblicitarie.</li>"
+            "</ul>"
+        ),
+        "pt": (
+            "7. Compras na Aplicação (In-App Purchases) e Pagamentos Seguros da Apple",
+            "<p>O ReWine oferece o desbloqueio <strong>ReWine PRO</strong> através de compra integrada não consumível (pagamento único vitalício). Todas as transações financeiras são processadas de forma segura e exclusiva pela Apple através do framework <strong>StoreKit 2</strong>.</p>"
+            "<ul>"
+            "<li><strong>Zero Acesso a Dados Financeiros:</strong> O ReWine nunca recolhe, armazena nem tem acesso a números de cartões de crédito ou dados bancários.</li>"
+            "<li><strong>Validação Criptográfica Local:</strong> O direito de acesso vitalício é verificado localmente no seu dispositivo através de recibos criptográficos assinados pela Apple (JWS).</li>"
+            "<li><strong>Sem Intermediários de Terceiros:</strong> Não utilizamos gateways de pagamento externos nem partilhamos dados de compra com redes de publicidade.</li>"
+            "</ul>"
+        ),
+        "ru": (
+            "7. Встроенные Покупки (In-App Purchases) и Безопасные Платежи Apple",
+            "<p>ReWine предлагает бессрочную версию <strong>ReWine PRO</strong> через встроенную покупку (единоразовый платеж навсегда). Все финансовые транзакции обрабатываются напрямую и безопасно компанией Apple с использованием официального фреймворка <strong>StoreKit 2</strong>.</p>"
+            "<ul>"
+            "<li><strong>Нулевой Доступ к Финансовым Данным:</strong> ReWine не собирает, не хранит и не имеет доступа к номерам банковских карт или платежной информации.</li>"
+            "<li><strong>Локальная Криптографическая Проверка:</strong> Право на бессрочный доступ проверяется непосредственно на вашем устройстве с помощью криптографических чеков Apple (JWS).</li>"
+            "<li><strong>Без Сторонних Посредников:</strong> Мы не используем внешние платежные шлюзы и не передаем данные о покупках рекламным сетям.</li>"
+            "</ul>"
+        ),
+        "zh": (
+            "7. 应用内购买（In-App Purchases）与 Apple 安全支付",
+            "<p>ReWine 提供通过非消耗型应用内购买永久解锁 <strong>ReWine PRO 终身版</strong>（一次性付费，终身有效）的选项。所有交易结算与扣费均由 Apple 通过官方 <strong>StoreKit 2</strong> 原生框架直接且安全地完成。</p>"
+            "<ul>"
+            "<li><strong>零接触财务敏感信息：</strong> ReWine 绝不收集、保存或访问您的银行卡号、支付密码或任何账单结算信息。</li>"
+            "<li><strong>设备端本地加密凭证校验：</strong> 终身购买权益完全依托 Apple 官方加密签名的 JWS 交易凭证在您的设备本地完成校验。</li>"
+            "<li><strong>无第三方中介机构：</strong> 我们不接入任何第三方支付网关，绝不向广告联盟或商业机构同步任何购买遥测数据。</li>"
+            "</ul>"
+        )
+    }
+
+    for lang in LANGUAGES:
+        code = lang["code"]
+        # Update features if not already present
+        if not any("PRO" in f[1] for f in MARKETING_DATA[code]["features"]):
+            MARKETING_DATA[code]["features"].insert(1, pro_cards[code])
+
+        # Update faqs if not already present
+        if not any("PRO" in q[0] for q in SUPPORT_DATA[code]["faqs"]):
+            for i, faq in enumerate(pro_faqs[code]):
+                SUPPORT_DATA[code]["faqs"].insert(1 + i, faq)
+
+        # Update privacy if not already present
+        if not any("In-App" in s[0] for s in PRIVACY_DATA[code]["sections"]):
+            new_sections = []
+            for heading, body in PRIVACY_DATA[code]["sections"]:
+                if heading.startswith("7.") or "Contact" in heading or "Directo" in heading or "联系" in heading:
+                    new_heading = heading.replace("7.", "8.")
+                    new_sections.append(pro_privacy[code])
+                    new_sections.append((new_heading, body))
+                else:
+                    new_sections.append((heading, body))
+            PRIVACY_DATA[code]["sections"] = new_sections
+
     for lang in LANGUAGES:
         code = lang["code"]
 
