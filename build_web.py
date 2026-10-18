@@ -158,7 +158,7 @@ MARKETING_DATA = {
         "hero_title": "El Arte de la Cata en tu Bolsillo con <span>ReWine</span>",
         "hero_sub": "La herramienta definitiva para amantes del vino y sumilleres. Registra catas completas con ubicación GPS automática, dictado por voz, nivel de sommelier interactivo, catálogo de más de 400 D.O. e IGPs mundiales, rueda de aromas profesional y fichas en PDF editorial con fotos sin deformación.",
         "features": [
-            ("🌍", "Totalmente Multilingüe (7 Idiomas)", "Disponible en <strong>Español, English, Français, Italiano, Português, Русский y 中文 (简体)</strong>. Selector inicial y cambio instantáneo en cualquier pantalla con terminología sommelier WSET y ampelografía adaptada."),
+            ("🌍", "Totalmente Multilingüe (7 Idiomas)", "Disponible en <strong>Español, Inglés, Francés, Italiano, Portugués, Ruso y Chino (Simplificado)</strong>. Selector inicial y cambio instantáneo en cualquier pantalla con terminología sommelier WSET y ampelografía adaptada."),
             ("🏆", "Nivel Sommelier & Progresión Gamificada", "5 niveles de maestría: <strong>Principiante, Aficionado, Medio, Superior y Master of Wine</strong>. Toca el recuadro para abrir la hoja de ruta interactiva con tus medallas, porcentaje de avance, tips sommelier y los requisitos exactos que te faltan para subir de nivel."),
             ("📊", "Top Países & Estadísticas de Bodega", "Analiza tu colección con el ranking de <strong>Top Países</strong> de procedencia con banderas nacionales en alta definición, recuento de botellas, porcentaje de bodega y nota media acumulada."),
             ("🍷", "Filtros y Clasificación Oficial (7 Dimensiones)", "Filtra y ordena tu cuaderno según las 7 dimensiones técnicas de cata: Tipo de producto, Carácter/Efervescencia, Color cromático, Añada, D.O./Región, País y <strong>Variedad de uva normalizada</strong> (sin duplicados ni porcentajes residuales)."),
@@ -959,10 +959,225 @@ PRIVACY_DATA = {
     }
 }
 
+
+PRICING_DATA = {
+    "es": {
+        "badge": "TRANSPARENCIA & MODELO DE PRECIOS",
+        "title_h2": "Elige el Plan que Mejor se <span>Adapta a Ti</span>",
+        "subtitle": "Descarga gratis para probar todas las funciones o desbloquea el acceso ilimitado para siempre con un único pago. Sin suscripciones ni publicidad.",
+        "free_title": "Plan Gratuito",
+        "free_price": "0,00 €",
+        "free_tag": "Para empezar tu cuaderno sensorial",
+        "free_features": [
+            "Hasta 5 catas completas de vino",
+            "1 exportación editorial en PDF A4",
+            "Dictado por voz on-device 100% privado",
+            "Rueda de aromas con clasificación enológica",
+            "Catálogo de 400+ D.O. y 64+ variedades",
+            "Tus catas se guardan siempre y nunca caducan"
+        ],
+        "free_btn": "Descargar Gratis",
+        "pro_badge": "ACCESO VITALICIO • PAGO ÚNICO",
+        "pro_title": "ReWine PRO",
+        "pro_price": "9,99 €",
+        "pro_tag": "Pago único • Para toda la vida • Sin suscripción",
+        "pro_features": [
+            "<strong>Catas de vino ILIMITADAS</strong> (sin restricciones)",
+            "<strong>Exportaciones editoriales en PDF ILIMITADAS</strong>",
+            "<strong>Progresión completa de los 5 niveles Sommelier</strong>",
+            "<strong>Estadísticas de bodega & Top Países</strong>",
+            "<strong>Todas las actualizaciones futuras incluidas</strong>",
+            "<strong>100% offline</strong>, sin cuotas mensuales ni anuales"
+        ],
+        "pro_btn": "Desbloquear ReWine PRO"
+    },
+    "en": {
+        "badge": "TRANSPARENCY & PRICING",
+        "title_h2": "Choose the Plan That Fits <span>Your Passion</span>",
+        "subtitle": "Download for free to explore every feature, or unlock unlimited access forever with a single one-time payment. Zero subscriptions, zero ads.",
+        "free_title": "Free Plan",
+        "free_price": "€0.00",
+        "free_tag": "To start your sensory wine journey",
+        "free_features": [
+            "Up to 5 complete wine tastings",
+            "1 editorial A4 PDF export",
+            "100% private on-device voice dictation",
+            "Aroma wheel with enological classification",
+            "Catalog of 400+ appellations & 64+ grapes",
+            "Your tastings remain saved forever"
+        ],
+        "free_btn": "Download Free",
+        "pro_badge": "LIFETIME ACCESS • ONE-TIME PAYMENT",
+        "pro_title": "ReWine PRO",
+        "pro_price": "€9.99",
+        "pro_tag": "One-time purchase • Forever yours • No subscription",
+        "pro_features": [
+            "<strong>UNLIMITED wine tastings</strong> (no limits)",
+            "<strong>UNLIMITED editorial A4 PDF exports</strong>",
+            "<strong>Complete 5-tier Sommelier progression</strong>",
+            "<strong>Cellar analytics & Top Countries ranking</strong>",
+            "<strong>All future updates included</strong>",
+            "<strong>100% offline</strong>, zero monthly or yearly fees"
+        ],
+        "pro_btn": "Unlock ReWine PRO"
+    },
+    "fr": {
+        "badge": "TRANSPARENCE & TARIFS",
+        "title_h2": "Choisissez la Formule qui <span>Vous Convient</span>",
+        "subtitle": "Téléchargement gratuit pour tester toutes les fonctionnalités, ou débloquez l'accès illimité à vie en un paiement unique. Sans abonnement ni publicité.",
+        "free_title": "Formule Gratuite",
+        "free_price": "0,00 €",
+        "free_tag": "Pour commencer votre carnet sensoriel",
+        "free_features": [
+            "Jusqu'à 5 dégustations complètes",
+            "1 export de fiche PDF A4 éditoriale",
+            "Dictée vocale 100% privée sur l'appareil",
+            "Roue des arômes et classification œnologique",
+            "Catalogue de 400+ AOP et 64+ cépages",
+            "Vos fiches sont conservées à jamais"
+        ],
+        "free_btn": "Télécharger Gratuitement",
+        "pro_badge": "ACCÈS À VIE • PAIEMENT UNIQUE",
+        "pro_title": "ReWine PRO",
+        "pro_price": "9,99 €",
+        "pro_tag": "Paiement unique • Valable à vie • Sans abonnement",
+        "pro_features": [
+            "<strong>Dégustations de vin ILLIMITÉES</strong>",
+            "<strong>Exports PDF éditoriaux ILLIMITÉS</strong>",
+            "<strong>Progression complète des 5 rangs de Sommelier</strong>",
+            "<strong>Statistiques de cave & classement Meilleurs Pays</strong>",
+            "<strong>Mises à jour futures incluses</strong>",
+            "<strong>100% hors ligne</strong>, sans frais mensuels ni annuels"
+        ],
+        "pro_btn": "Débloquer ReWine PRO"
+    },
+    "it": {
+        "badge": "TRASPARENZA & TARIFFE",
+        "title_h2": "Scegli il Piano Perfetto <span>per Te</span>",
+        "subtitle": "Scarica gratis per provare tutte le funzionalità o sblocca l'accesso illimitato a vita con un solo pagamento. Nessun abbonamento né pubblicità.",
+        "free_title": "Piano Gratuito",
+        "free_price": "0,00 €",
+        "free_tag": "Per iniziare il tuo diario sensoriale",
+        "free_features": [
+            "Fino a 5 degustazioni complete di vino",
+            "1 esportazione PDF A4 editoriale",
+            "Dettatura vocale 100% privata on-device",
+            "Ruota degli aromi con classificazione enologica",
+            "Catalogo di 400+ DOC/IGP e 64+ vitigni",
+            "Le tue schede restano salvate per sempre"
+        ],
+        "free_btn": "Scarica Gratis",
+        "pro_badge": "ACCESSO A VITA • PAGAMENTO UNICO",
+        "pro_title": "ReWine PRO",
+        "pro_price": "9,99 €",
+        "pro_tag": "Pagamento unico • Per sempre tuo • Senza abbonamento",
+        "pro_features": [
+            "<strong>Degustazioni di vino ILLIMITATE</strong>",
+            "<strong>Esportazioni PDF editoriali ILLIMITATE</strong>",
+            "<strong>Progressione completa nei 5 livelli Sommelier</strong>",
+            "<strong>Statistiche avanzate di cantina & Top Paesi</strong>",
+            "<strong>Aggiornamenti futuri inclusi</strong>",
+            "<strong>100% offline</strong>, nessun costo mensile o annuale"
+        ],
+        "pro_btn": "Sblocca ReWine PRO"
+    },
+    "pt": {
+        "badge": "TRANSPARÊNCIA & PREÇOS",
+        "title_h2": "Escolha o Plano Ideal <span>para Si</span>",
+        "subtitle": "Transfira gratuitamente para testar todas as funcionalidades ou desbloqueie o acesso ilimitado para sempre com um pagamento único. Sem subscrições nem anúncios.",
+        "free_title": "Plano Gratuito",
+        "free_price": "0,00 €",
+        "free_tag": "Para iniciar o seu caderno sensorial",
+        "free_features": [
+            "Até 5 provas completas de vinho",
+            "1 exportação editorial em PDF A4",
+            "Ditado por voz 100% privado no dispositivo",
+            "Roda de aromas com classificação enológica",
+            "Catálogo de 400+ D.O./IGPs e 64+ castas",
+            "As suas provas permanecem salvas para sempre"
+        ],
+        "free_btn": "Descarregar Grátis",
+        "pro_badge": "ACESSO VITALÍCIO • PAGAMENTO ÚNICO",
+        "pro_title": "ReWine PRO",
+        "pro_price": "9,99 €",
+        "pro_tag": "Pagamento único • Para toda a vida • Sem subscrição",
+        "pro_features": [
+            "<strong>Provas de vinho ILIMITADAS</strong> (sem restrições)",
+            "<strong>Exportações editoriais em PDF ILIMITADAS</strong>",
+            "<strong>Progressão completa nos 5 níveis de Sommelier</strong>",
+            "<strong>Estatísticas avançadas de adega & Principais Países</strong>",
+            "<strong>Todas as atualizações futuras incluídas</strong>",
+            "<strong>100% offline</strong>, sem taxas mensais ou anuais"
+        ],
+        "pro_btn": "Desbloquear ReWine PRO"
+    },
+    "ru": {
+        "badge": "ПРОЗРАЧНОСТЬ & ТАРИФЫ",
+        "title_h2": "Выберите Подходящий <span>План</span>",
+        "subtitle": "Скачивайте бесплатно для знакомства со всеми функциями или откройте неограниченный доступ навсегда разовым платежом. Без подписок и рекламы.",
+        "free_title": "Бесплатный План",
+        "free_price": "0,00 €",
+        "free_tag": "Для начала дегустационного пути",
+        "free_features": [
+            "До 5 полных винных дегустаций",
+            "1 полиграфический PDF-экспорт А4",
+            "100% приватная голосовая диктовка на устройстве",
+            "Колесо ароматов с энологической классификацией",
+            "Каталог 400+ апелласьонов и 64+ сортов",
+            "Ваши дегустации сохраняются навсегда"
+        ],
+        "free_btn": "Скачать Бесплатно",
+        "pro_badge": "БЕССРОЧНЫЙ ДОСТУП • РАЗОВЫЙ ПЛАТЕЖ",
+        "pro_title": "ReWine PRO",
+        "pro_price": "9,99 €",
+        "pro_tag": "Один платеж • Доступ навсегда • Без подписки",
+        "pro_features": [
+            "<strong>БЕЗЛИМИТНЫЕ винные дегустации</strong>",
+            "<strong>БЕЗЛИМИТНЫЙ экспорт в PDF формата А4</strong>",
+            "<strong>Полная система прогресса 5 рангов Сомелье</strong>",
+            "<strong>Расширенная статистика коллекции и Топ Стран</strong>",
+            "<strong>Все будущие обновления включены</strong>",
+            "<strong>100% офлайн</strong>, без ежемесячных или ежегодных списаний"
+        ],
+        "pro_btn": "Разблокировать ReWine PRO"
+    },
+    "zh": {
+        "badge": "透明定价体系",
+        "title_h2": "选择最适合您的 <span>品鉴方案</span>",
+        "subtitle": "免费下载体验全部专业功能，或仅需一次性付费即可永久解锁无限可能。无按期订阅陷阱，无广告侵扰。",
+        "free_title": "免费体验版",
+        "free_price": "0.00 €",
+        "free_tag": "开启您的随身感官品鉴旅程",
+        "free_features": [
+            "最多创建5次完整葡萄酒品鉴记录",
+            "尊享1次高保真A4 PDF报告导出",
+            "100%本地设备端私密智能语音口述",
+            "专业三级风味轮盘与感官词典",
+            "收录全球400+法定产区与64+葡萄品种",
+            "已保存的品酒档案永久有效且可自由编辑"
+        ],
+        "free_btn": "免费下载使用",
+        "pro_badge": "终身买断 • 一次性付费",
+        "pro_title": "ReWine PRO 终身版",
+        "pro_price": "9.99 €",
+        "pro_tag": "一次性购买 • 终身所有 • 绝无后续订阅",
+        "pro_features": [
+            "<strong>无限次葡萄酒品鉴建档</strong>（无数量上限）",
+            "<strong>无限次高保真A4复古羊皮纸PDF报告导出</strong>",
+            "<strong>五级侍酒师完整段位体系与成长面板</strong>",
+            "<strong>酒窖大数据深度洞察与顶级产酒国排行榜</strong>",
+            "<strong>包含未来所有功能迭代与升级</strong>",
+            "<strong>100%支持纯离线运行</strong>，绝无按月或按年订阅扣费"
+        ],
+        "pro_btn": "立即解锁 ReWine PRO"
+    }
+}
+
 def generate_index_html(lang):
     code = lang["code"]
     ui = UI_STRINGS[code]
     data = MARKETING_DATA[code]
+    pricing = PRICING_DATA[code]
 
     nav_html = render_nav("index", code, ui)
     footer_html = render_footer(code, ui)
@@ -975,6 +1190,9 @@ def generate_index_html(lang):
         <p>{desc}</p>
       </div>""")
     cards_str = "\n\n".join(cards_html)
+
+    free_feat_html = "\n              ".join([f'<li><span class="check-icon">✓</span> {feat}</li>' for feat in pricing['free_features']])
+    pro_feat_html = "\n              ".join([f'<li><span class="check-icon">✓</span> {feat}</li>' for feat in pricing['pro_features']])
 
     soporte_file = get_page_filename("soporte", code)
 
@@ -1005,6 +1223,46 @@ def generate_index_html(lang):
   <section class="container">
     <div class="features-grid">
 {cards_str}
+    </div>
+  </section>
+
+  <!-- DEDICATED PRICING & COMPARISON SECTION -->
+  <section class="pricing-section">
+    <div class="container">
+      <div class="pricing-header">
+        <div class="badge">{pricing['badge']}</div>
+        <h2>{pricing['title_h2']}</h2>
+        <p class="hero-subtitle" style="margin-bottom: 0;">{pricing['subtitle']}</p>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- FREE TIER -->
+        <div class="pricing-card">
+          <div>
+            <div class="pricing-title">{pricing['free_title']}</div>
+            <div class="pricing-price">{pricing['free_price']}</div>
+            <div class="pricing-tag">{pricing['free_tag']}</div>
+            <ul class="pricing-features">
+              {free_feat_html}
+            </ul>
+          </div>
+          <a href="#" class="btn-cta pricing-btn" style="background: rgba(255, 255, 255, 0.08); border: 1px solid var(--border-light); box-shadow: none;">{pricing['free_btn']}</a>
+        </div>
+
+        <!-- PRO LIFETIME -->
+        <div class="pricing-card featured">
+          <span class="pricing-card-badge">{pricing['pro_badge']}</span>
+          <div>
+            <div class="pricing-title">{pricing['pro_title']}</div>
+            <div class="pricing-price">{pricing['pro_price']}</div>
+            <div class="pricing-tag">{pricing['pro_tag']}</div>
+            <ul class="pricing-features">
+              {pro_feat_html}
+            </ul>
+          </div>
+          <a href="#" class="btn-cta pricing-btn">{pricing['pro_btn']}</a>
+        </div>
+      </div>
     </div>
   </section>
 
